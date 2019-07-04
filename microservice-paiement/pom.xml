@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.M8</spring-cloud.version>
+		<spring-cloud.version>Finchley.M8</spring-cloud.version><!-- for spring cloud  -->
 	</properties>
 
 	<dependencies>
@@ -35,14 +35,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
+		
+		<!--  for link with spring config-->
+		<dependency>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-configuration-processor</artifactId>
+  			<optional>true</optional>
+  		</dependency>
+  		
+		<dependency><!-- for link with spring config and openfeign  -->
+  			<groupId>org.springframework.cloud</groupId>
+  			<artifactId>spring-cloud-starter-config</artifactId>
+  		</dependency>
+  		
 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
+<!-- for api rest openfeign  -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -57,7 +69,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
+			<dependency><!-- for spring cloud  -->
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
@@ -77,7 +89,7 @@
 	</build>
 
 	<repositories>
-		<repository>
+		<repository><!-- for spring cloud  -->
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
@@ -86,5 +98,6 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
 
 </project>
