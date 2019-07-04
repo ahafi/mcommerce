@@ -15,14 +15,14 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.M8</spring-cloud.version> <!-- for spring cloud  -->
+		<spring-cloud.version>Finchley.M8</spring-cloud.version> <!-- for spring cloud -->
 	</properties>
 
 	<dependencies>
@@ -42,26 +42,31 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!--  for link with spring config-->
+
+		<!-- for link with spring config -->
 		<dependency>
-  			<groupId>org.springframework.boot</groupId>
-  			<artifactId>spring-boot-configuration-processor</artifactId>
-  			<optional>true</optional>
-  		</dependency>
-  		
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 		<dependency>
-  			<groupId>org.springframework.cloud</groupId>
-  			<artifactId>spring-cloud-starter-config</artifactId>
-  		</dependency>
-  		
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- for refresh  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
-<!--  for spring cloud -->
+	<!-- for spring cloud -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -82,7 +87,7 @@
 		</plugins>
 	</build>
 	<repositories>
-		<repository><!-- for spring cloud  -->
+		<repository><!-- for spring cloud -->
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
