@@ -5,6 +5,7 @@ import com.mproduits.dao.ProductDao;
 import com.mproduits.model.Product;
 import com.mproduits.web.exceptions.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,11 +43,18 @@ public class ProductController {
         if(products.isEmpty()) throw new ProductNotFoundException("Aucun produit n'est disponible à la vente");
 
         List<Product> listeLimitee = products.subList(0, appProperties.getLimitDeProduits());
-
+        //String port = environment.getProperty("local.server.port");
         return listeLimitee;
 
     }
     
+	@Value("${app.message}")
+	private String welcomeMessage;
+	
+	@GetMapping("/info")
+	public String getDataBaseConnectionDetails() {
+		return welcomeMessage;
+	}
     //Récuperer un produit par son id
     @GetMapping( value = "/Produits/{id}")
     public Optional<Product> recupererUnProduit(@PathVariable int id) {
