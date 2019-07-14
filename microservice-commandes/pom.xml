@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>mcommandes</name>
-	<description>Microservices pour simuler des paiements</description>
+	<description>Microservices pour simuler des commmandes</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
