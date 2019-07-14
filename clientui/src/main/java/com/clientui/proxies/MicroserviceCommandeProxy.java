@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RibbonClient(name = "microservice-commandes")
 public interface MicroserviceCommandeProxy {
 
-    @PostMapping(value = "/commandes")
+    // @PostMapping(value = "/commandes") call directely 
+    @PostMapping(value = "/microservice-commandes/commandes") // call by ZULL
     CommandeBean ajouterCommande(@RequestBody CommandeBean commande);
 }

@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RibbonClient(name = "microservice-paiement")
 public interface MicroservicePaiementProxy {
 
-    @PostMapping(value = "/paiement")
+   // @PostMapping(value = "/paiement") call directely 
+    @PostMapping(value = "/microservice-paiement/paiement") // call by ZULL
     ResponseEntity<PaiementBean> payerUneCommande(@RequestBody PaiementBean paiement);
 
 }
