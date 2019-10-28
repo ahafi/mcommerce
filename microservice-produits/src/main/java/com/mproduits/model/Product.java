@@ -5,19 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Length;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
+//@JsonIgnoreProperties(value = {"description", "id"})
+// @JsonFilter("monFiltreDynamique") ce Bean (Product) accepte un filtre qui porte le nom très créatif de monFiltreDynamique
 public class Product {
 
     @Id
     @GeneratedValue
     private int id;
-
+   // @Length(min=3, max=20, message = "Nom trop long ou trop court. Et oui messages sont plus stylés que ceux de Spring")
     private String titre;
 
     private String description;
 
     private String image;
-
+    
+  //@RequestBody filtre statique  Ajoutez l'annotation @JsonIgnore au-dessus des propriétés que vous souhaitez cacher
+    //@JsonIgnore
     private Double prix;
 
 

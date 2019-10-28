@@ -15,6 +15,7 @@ public class ReponseFilter extends ZuulFilter {
 
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
+	// Le 2 éme filtre récupère toutes les réponses et change le code en 400
 	@Override
 	public String filterType() {
 		return "post";
@@ -29,7 +30,8 @@ public class ReponseFilter extends ZuulFilter {
 	public boolean shouldFilter() {
 		return false;
 	}
-
+	
+	//c.m.zuulserver.filters.ReponseFilter     :  CODE HTTP 400
 	@Override
 	public Object run() throws ZuulException {
 

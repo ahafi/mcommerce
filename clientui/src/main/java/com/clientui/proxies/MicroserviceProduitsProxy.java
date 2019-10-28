@@ -13,7 +13,8 @@ import java.util.Optional;
 
 //@FeignClient(name = "microservice-produits", url = "localhost:9001")
 //@FeignClient(name = "microservice-produits") // call directly services
-@FeignClient(name = "zuul-server") // call services by ZULL
+//@FeignClient(name = "zuul-server") // call services by ZULL
+@FeignClient(name = "api-gateway", url = "localhost:9201")
 @RibbonClient(name = "microservice-produits")
 public interface MicroserviceProduitsProxy {
 

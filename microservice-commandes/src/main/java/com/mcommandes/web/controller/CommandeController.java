@@ -1,6 +1,7 @@
 package com.mcommandes.web.controller;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mcommandes.dao.CommandesDao;
 import com.mcommandes.model.Commande;
 import com.mcommandes.web.exceptions.CommandeNotFoundException;
