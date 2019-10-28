@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin</title>
+
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <h1 class="text-center" >Authentification</h1>
+
+    <div class="row">
+
+        <!--
+        Boucle sur tous les objets de type "produit" de la liste et affichage des informations produit.
+        -->
+        <div class="col-md-4 my-1">
+            <h3 class="text-center" >le token est </h3> 
+                <p th:text= "${token}"></p>
+           
+        </div> 
+        
+    </div>
+
+</div>
+
+
+	<div>
+		<form th:action="@{/persistMessage}" method="post">
+			<textarea name="tkn" cols="40" rows="2"></textarea>
+			<br> <input type="submit" value="Save Token" />
+		</form>
+	</div>
+	<div>
+		<h2>Messages</h2>
+		<ul th:each="message : ${sessionTokens}">
+			<li th:text="${token}">tkn</li>
+		</ul>
+	</div>
+	<div>
+		<form th:action="@{/destroy}" method="post">
+			<input type="submit" value="Destroy Session" />
+		</form>
+	</div>
+
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
