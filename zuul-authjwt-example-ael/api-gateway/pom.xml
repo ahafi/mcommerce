@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<properties>
 		<!-- util -->
-		<commons-io.version>2.6</commons-io.version>
+		<commons-io.version>2.7</commons-io.version>
 		<commons-lang3.version>3.8.1</commons-lang3.version>
 	</properties>
 	<artifactId>api-gateway</artifactId>
